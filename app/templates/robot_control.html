@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='robot_control.css') }}">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.9.4/typescript.min.js" integrity="sha512-E4RxXpUpcaQZX39bUx2SRra9r2zbzAQ+lN0YeI0/JT5RclRoisYlBznfEzXBdiO/UoQtZvhYJyi02wtZgHdwSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container-mine">
+            <!-- INFO PART -->
+            <div class="column" id="left"></div>
+            <!-- digital twin -->
+            <div class="column" id="right">
+                <div class="label-info">
+                    Joint Control Panel
+                </div>
+
+                <div class="joint-control">
+
+                    <div class="joint" id="base">
+                        <div class="joint-label">Joint 1</div>
+                        <button type="button" class="btn btn-primary btn-lg"><</button>
+                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
+                        <button type="button" class="btn btn-primary btn-lg">></button>
+                        <div class="joint-data">data</div>
+                    </div>
+
+                    
+                    <div class="joint" id="shoulder">
+                        <div class="joint-label">Joint 2</div>
+                        <button type="button" class="btn btn-primary btn-lg"><</button>
+                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
+                        <button type="button" class="btn btn-primary btn-lg">></button>
+                        <div class="joint-data">data</div>
+                    </div>
+
+                    
+                    <div class="joint" id="elbow">
+                        <div class="joint-label">Joint 3</div>
+                        <button type="button" class="btn btn-primary btn-lg"><</button>
+                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
+                        <button type="button" class="btn btn-primary btn-lg">></button>
+                        <div class="joint-data">data</div>
+                    </div>
+
+                    
+                    <div class="joint" id="wrist_1">
+                        <div class="joint-label">Joint 4</div>
+                        <button type="button" class="btn btn-primary btn-lg"><</button>
+                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
+                        <button type="button" class="btn btn-primary btn-lg">></button>
+                        <div class="joint-data">data</div>
+                    </div>
+
+                    
+                    <div class="joint" id="wrist_2">
+                        <div class="joint-label">Joint 5</div>
+                        <button type="button" class="btn btn-primary btn-lg"><</button>
+                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
+                        <button type="button" class="btn btn-primary btn-lg">></button>
+                        <div class="joint-data">data</div>
+                    </div>
+
+                    
+                    <div class="joint" id="wrist_3">
+                        <div class="joint-label">Joint 6</div>
+                        <button type="button" class="btn btn-primary btn-lg"><</button>
+                        <input id="base" type="range" class="form-range" min="-360" max="360" step="1">
+                        <button type="button" class="btn btn-primary btn-lg">></button>
+                        <div class="joint-data">data</div>
+                    </div>
+                </div>
+
+                <div class="label-info">
+                    Robot Info
+                </div>
+                <div class="robot-info">
+                    <div class="tcp-labels">
+                        <div class="labels">X</div>
+                        <div class="labels">Y</div>
+                        <div class="labels">Z</div>
+                    </div>
+
+                    <div class="tcp-labels">
+                        <div class="labels" id="x"></div>
+                        <div class="labels" id="y"></div>
+                        <div class="labels" id="z"></div>
+                    </div>
+   
+                    <div class="tcp-labels">
+                        <div class="labels">RX</div>
+                        <div class="labels">RY</div>
+                        <div class="labels">RZ</div>
+                    </div>
+
+                    <div class="tcp-labels">
+                        <div class="labels" id="RX">DA</div>
+                        <div class="labels" id="RY">Da</div>
+                        <div class="labels" id="RZ">DA</div>
+                    </div>
+                </div>
+                <button id="btn_home" type="button" class="btn btn-primary btn-lg">Home</button>
+            </div>
+        </div>
+    </body>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom_bootstrap.css') }}">
+</html>
