@@ -18,7 +18,7 @@
     opacity: 0.5;
 }
 
-.btn:focus, .btn:active{
+.btn:focus, .btn:active, .btn:active:hover{
     outline:0;
     box-shadow:0 0 0 0rem rgb(33, 105, 124);
     background-color: rgb(33, 105, 124);
@@ -32,6 +32,15 @@
     margin: 10%;
 }
 
-.btn:active {
+.btn:active,.btn:disabled {
     opacity: 0.4;
+    background-color: rgb(33, 105, 124);
+}
+
+#label-adress{
+    margin-left: 10%;
+}
+#ip-adress{
+    width: 80%;
+    margin-left: 10%;
 }
