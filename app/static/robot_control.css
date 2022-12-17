@@ -20,8 +20,22 @@ body{
     align-self: flex-start;
 }
 
+canvas{
+    border-radius: 2%
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 #left{
-    background: red;
+    display: flex;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 #right{

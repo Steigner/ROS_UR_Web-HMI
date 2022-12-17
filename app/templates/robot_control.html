@@ -7,6 +7,26 @@
         
         <link rel="stylesheet" href="{{ url_for('static', filename='robot_control.css') }}">
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+        <!-- library -> roslib current -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        <!-- library -> digital twin -->
+        <script src="https://static.robotwebtools.org/threejs/r89/ColladaLoader.js"></script>
+
+        <!-- library -> digital twin -->
+        <script src="https://static.robotwebtools.org/threejs/r89/STLLoader.js"></script>
+
+        <!-- library -> digital twin -->
+        <script src="https://static.robotwebtools.org/EventEmitter2/0.4.14/eventemitter2.min.js"></script>
+
+        <!-- library -> ros.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/roslibjs/1.1.0/roslib.min.js" integrity="sha512-x2Owc9WayRcRj80Znkau58shVfXN2OIX+gQAlrx6KPugZBKrIC6AwgEWQQCI06p2Q8RB4ilxD+y+1BdNd+1fQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!-- library -> ros3D - digital twin -->
+        <script src="https://static.robotwebtools.org/ros3djs/current/ros3d.min.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.9.4/typescript.min.js" integrity="sha512-E4RxXpUpcaQZX39bUx2SRra9r2zbzAQ+lN0YeI0/JT5RclRoisYlBznfEzXBdiO/UoQtZvhYJyi02wtZgHdwSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -16,7 +36,10 @@
     <body>
         <div class="container-mine">
             <!-- INFO PART -->
-            <div class="column" id="left"></div>
+            <div class="column" id="left">
+                <div id="urdf"></div>
+            </div>
+            
             <!-- digital twin -->
             <div class="column" id="right">
                 <div class="label-info">
@@ -27,55 +50,55 @@
 
                     <div class="joint" id="base">
                         <div class="joint-label">Joint 1</div>
-                        <button type="button" class="btn btn-primary btn-lg"><</button>
-                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
-                        <button type="button" class="btn btn-primary btn-lg">></button>
-                        <div class="joint-data">data</div>
+                        <button id="base" type="button" class="left btn btn-primary btn-lg"><</button>
+                        <input id="base" type="range" class="form-range" min="-360" max="360" step="1">
+                        <button id="base" type="button" class="right btn btn-primary btn-lg">></button>
+                        <div id="base" class="joint-data">data</div>
                     </div>
 
                     
                     <div class="joint" id="shoulder">
                         <div class="joint-label">Joint 2</div>
-                        <button type="button" class="btn btn-primary btn-lg"><</button>
-                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
-                        <button type="button" class="btn btn-primary btn-lg">></button>
-                        <div class="joint-data">data</div>
+                        <button id="shoulder" type="button" class="left btn btn-primary btn-lg"><</button>
+                        <input id="shoulder" type="range" class="form-range" min="-360" max="360" step="1">
+                        <button id="shoulder" type="button" class="right btn btn-primary btn-lg">></button>
+                        <div id="shoulder" class="joint-data">data</div>
                     </div>
 
                     
                     <div class="joint" id="elbow">
                         <div class="joint-label">Joint 3</div>
-                        <button type="button" class="btn btn-primary btn-lg"><</button>
-                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
-                        <button type="button" class="btn btn-primary btn-lg">></button>
-                        <div class="joint-data">data</div>
+                        <button id="elbow" type="button" class="left btn btn-primary btn-lg"><</button>
+                        <input id="elbow" type="range" class="form-range" min="-360" max="360" step="1">
+                        <button id="elbow" type="button" class="right btn btn-primary btn-lg">></button>
+                        <div id="elbow" class="joint-data">data</div>
                     </div>
 
                     
                     <div class="joint" id="wrist_1">
                         <div class="joint-label">Joint 4</div>
-                        <button type="button" class="btn btn-primary btn-lg"><</button>
-                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
-                        <button type="button" class="btn btn-primary btn-lg">></button>
-                        <div class="joint-data">data</div>
+                        <button id="wrist_1" type="button" class="left btn btn-primary btn-lg"><</button>
+                        <input id="wrist_1" type="range" class="form-range" min="-360" max="360" step="1">
+                        <button id="wrist_1" type="button" class="right btn btn-primary btn-lg">></button>
+                        <div id="wrist_1" class="joint-data">data</div>
                     </div>
 
                     
                     <div class="joint" id="wrist_2">
                         <div class="joint-label">Joint 5</div>
-                        <button type="button" class="btn btn-primary btn-lg"><</button>
-                        <input id="base" type="range" class="form-range" min="0" max="5" step="0.5">
-                        <button type="button" class="btn btn-primary btn-lg">></button>
-                        <div class="joint-data">data</div>
+                        <button id="wrist_2" type="button" class="left btn btn-primary btn-lg"><</button>
+                        <input id="wrist_2" type="range" class="form-range" min="-360" max="360" step="1">
+                        <button id="wrist_2" type="button" class="right btn btn-primary btn-lg">></button>
+                        <div id="wrist_2" class="joint-data">data</div>
                     </div>
 
                     
                     <div class="joint" id="wrist_3">
                         <div class="joint-label">Joint 6</div>
-                        <button type="button" class="btn btn-primary btn-lg"><</button>
-                        <input id="base" type="range" class="form-range" min="-360" max="360" step="1">
-                        <button type="button" class="btn btn-primary btn-lg">></button>
-                        <div class="joint-data">data</div>
+                        <button id="wrist_3" type="button" class="left btn btn-primary btn-lg"><</button>
+                        <input id="wrist_3" type="range" class="form-range" min="-360" max="360" step="1">
+                        <button id="wrist_3" type="button" class="right btn btn-primary btn-lg">></button>
+                        <div id="wrist_3" class="joint-data">data</div>
                     </div>
                 </div>
 
@@ -90,9 +113,9 @@
                     </div>
 
                     <div class="tcp-labels">
-                        <div class="labels" id="x"></div>
-                        <div class="labels" id="y"></div>
-                        <div class="labels" id="z"></div>
+                        <div id="X" class="labels">None</div>
+                        <div id="Y" class="labels">None</div>
+                        <div id="Z" class="labels">None</div>
                     </div>
    
                     <div class="tcp-labels">
@@ -102,15 +125,19 @@
                     </div>
 
                     <div class="tcp-labels">
-                        <div class="labels" id="RX">DA</div>
-                        <div class="labels" id="RY">Da</div>
-                        <div class="labels" id="RZ">DA</div>
+                        <div id="RX" class="labels">None</div>
+                        <div id="RY" class="labels">None</div>
+                        <div id="RZ" class="labels">None</div>
                     </div>
                 </div>
-                <button id="btn_home" type="button" class="btn btn-primary btn-lg">Home</button>
+                <div class="buttons">
+                    <button id="btn_home" type="button" class="btn btn-primary btn-lg">Disconnect</button>
+                    <button id="btn_run" type="button" class="btn btn-primary btn-lg">Run</button>
+                </div>
             </div>
         </div>
     </body>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='custom_bootstrap.css') }}">
+    <script type="module" src="{{ url_for('static', filename = 'robot_control.js') }}"></script>
 </html>

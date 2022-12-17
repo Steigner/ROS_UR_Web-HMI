@@ -24,17 +24,17 @@
     background-color: rgb(33, 105, 124);
 }
 
-#btn_home{
-    margin: 5%;
+#btn_home, #btn_run{
+    margin: 1%;
 }
 
 .btn{
     margin: 10%;
 }
 
-.btn:active,.btn:disabled {
+.btn:disabled {
     opacity: 0.4;
-    background-color: rgb(33, 105, 124);
+    background-color: red;
 }
 
 #label-adress{
