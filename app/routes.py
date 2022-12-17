@@ -4,8 +4,8 @@ from flask import Blueprint, render_template
 app = Blueprint("app", __name__)
 
 @app.route("/")
-def home():
-    return render_template("home.html")
+def robot_connect():
+    return render_template("robot_connect.html")
 
 @app.route("/robot_control")
 def robot_control():

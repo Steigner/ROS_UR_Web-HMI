@@ -4,6 +4,8 @@ body{
     margin: 0;
     padding: 0;
     border: 0;
+    background-color: #f2f2f2;
+    background-color: rgba(242, 242, 242, 1);
 }
 
 .container-mine {
@@ -67,7 +69,6 @@ canvas{
 
     border-radius: 10%;
 
-    font-family: Verdana;
     font-size: 125%;
 
     color: #21697c;
@@ -88,7 +89,6 @@ canvas{
 
     border-radius: 10%;
 
-    font-family: Verdana;
     font-size: 100%;
 
     color: #21697c;

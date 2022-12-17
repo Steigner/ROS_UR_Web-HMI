@@ -1,6 +1,7 @@
 $(function init() {
     var ros = new ROSLIB.Ros();
-    ros.connect('ws://192.168.19.129:9090');
+
+    ros.connect('ws://' + Cookies.get('ros_ip_adress') + ':9090');
 
     var viewer = new ROS3D.Viewer({
         divID: 'urdf',
@@ -160,8 +161,8 @@ class RobotControl {
             console.log(status)
             if (status == 3 || status == 4) {
                     // if status 4 -> error!!
-                    $(':button').prop('disabled', false); // Enable all the buttons
-                    $(':input').prop('disabled', false); // Enable all the inputs
+                    $(':button, :input').prop('disabled', false); // Enable all the buttons
+                    //$(':input').prop('disabled', false); // Enable all the inputs
                     console.log("Done")
             } else {
                 return;
@@ -174,8 +175,8 @@ class RobotControl {
         var get_data_joint = this.get_data_joint;
 
         $("#btn_run").click(function() {
-            $(':button').prop('disabled', true); // Disable all the buttons
-            $(':input').prop('disabled', true); // Disable all the buttons
+            $(':button, :input').prop('disabled', true); // Disable all the buttons
+            //$(':input').prop('disabled', true); // Disable all the buttons
 
             var q = [];
             for (var element of elements) {
@@ -254,6 +255,8 @@ class RobotControl {
     }
 
     kill_process() {
+        Cookies.remove('ros_ip_adress');
+
         console.log('killiung');
         var data = new ROSLIB.Message({
             data: 'manual_control_stop',

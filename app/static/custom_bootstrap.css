@@ -40,7 +40,7 @@
 #label-adress{
     margin-left: 10%;
 }
-#ip-adress{
+#ip-adress, #ros-ip-adress{
     width: 80%;
     margin-left: 10%;
 }

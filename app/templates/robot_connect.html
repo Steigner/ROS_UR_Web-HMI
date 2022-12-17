@@ -15,7 +15,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='robot_connect.css') }}">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 <body>
@@ -26,8 +28,13 @@
               <h5 class="modal-title" id="modal-title">URx</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div id="liveAlertPlaceholder"></div>
             <div class="mb-3">
-                <label for="recipient-name" class="col-form-label" id="label-adress">IP adress:</label>
+                <label for="recipient-name" class="col-form-label" id="label-adress">ROS Server IP adress:</label>
+                <input type="text" class="form-control" id="ros-ip-adress">
+            </div>
+            <div class="mb-3">
+                <label for="recipient-name" class="col-form-label" id="label-adress">Robot IP adress:</label>
                 <input type="text" class="form-control" id="ip-adress">
             </div>
             <div class="modal-footer">
@@ -47,27 +54,34 @@
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="10000">
-                            <img id="img" src="{{ url_for('static', filename='/img/UR3.jpg') }}" class="d-block w-100" alt="...">
+                            <img id="img" src="{{ url_for('static', filename='/img/UR3.jpg') }}" class="d-block w-100" alt="universal robots">
                             <div class="label">
                                 <a id="UR3" class="ur btn btn-primary btn-lg" data-bs-toggle="modal" href="#exampleModalToggle" role="button">UR3</a>
                                 <a id="UR3e" class="ur btn btn-primary btn-lg" data-bs-toggle="modal" href="#exampleModalToggle" role="button">UR3e</a>
                             </div>
                         </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img id="img" src="{{ url_for('static', filename='/img/UR5.jpg') }}" class="d-block w-100" alt="...">
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img id="img" src="{{ url_for('static', filename='/img/UR5.jpg') }}" class="d-block w-100" alt="universal robots">
                             <div class="label">
                                 <a id="UR5" class="ur btn btn-primary btn-lg" data-bs-toggle="modal" href="#exampleModalToggle" role="button">UR5</a>
                                 <a id="UR5e" class="ur btn btn-primary btn-lg" data-bs-toggle="modal" href="#exampleModalToggle" role="button">UR5e</a>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <img id="img" src="{{ url_for('static', filename='/img/UR10.jpg') }}" class="d-block w-100" alt="...">
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img id="img" src="{{ url_for('static', filename='/img/UR10.jpg') }}" class="d-block w-100" alt="universal robots">
                             <div class="label">
                                 <a id="UR10" class="ur btn btn-primary btn-lg" data-bs-toggle="modal" href="#exampleModalToggle" role="button">UR10</a>
                                 <a id="UR10e" class="ur btn btn-primary btn-lg" data-bs-toggle="modal" href="#exampleModalToggle" role="button">UR10e</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img id="img" src="{{ url_for('static', filename='/img/UR16.jpg') }}" class="d-block w-100" alt="universal robots">
+                            <div class="label">
+                                <a id="UR10e" class="ur btn btn-primary btn-lg" data-bs-toggle="modal" href="#exampleModalToggle" role="button">UR16e</a>
                             </div>
                         </div>
                     </div>
@@ -92,27 +106,7 @@
     <script>
         // onload pryc
 
-        $(".ur").click(function(event){
-            $('#modal-title').text(event.target.id)
-            console.log(event.target.id);
-        });
 
-        $('#ip-adress').inputmask({
-            alias: "ip",
-            greedy: false
-        });
-
-        $(document).ready(function() {
-            $("#connect").click(function() {
-            // disable button
-            $(':button').prop('disabled', true)
-            $(this).prop("disabled", true);
-            // add spinner to button
-            $(this).html(
-                '<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>'
-            );
-            });
-        });
     </script>
     <script type="module" src="{{ url_for('static', filename = 'robot_connect.js') }}"></script>
 </body>
