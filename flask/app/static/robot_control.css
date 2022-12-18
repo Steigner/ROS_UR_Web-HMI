@@ -8,7 +8,7 @@ body{
     background-color: rgba(242, 242, 242, 1);
 }
 
-.container-mine {
+.container-mine{
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -17,13 +17,9 @@ body{
 
 .robot-info{
     display: grid;
+    align-self: flex-start;
     grid-template-columns: 15% 35% 15% 35%;
     margin-top: 2%;
-    align-self: flex-start;
-}
-
-canvas{
-    border-radius: 2%
 }
 
 .buttons{
@@ -33,11 +29,11 @@ canvas{
 
 #left{
     display: flex;
-    background: transparent;
-    width: 100%;
-    height: 100%;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
 }
 
 #right{
@@ -46,53 +42,41 @@ canvas{
     align-items: center;
 }
 
+.joint{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 15% 15% 40% 15% 15%;
+}
+
 .joint-control{
     display: grid;
     align-self: flex-start;
     margin-top: 2%;
 }
 
-.joint{
-    display: grid;
-    grid-template-columns: 15% 15% 40% 15% 15%;
+.labels{
+    height: 50%;
+    margin: 0.3rem;
+    font-size: 100%;
+    border-radius: 10%;
+}
+
+.label-info, .joint-label, .joint-data, .labels{
+    display: flex;
+    justify-content: center;
     align-items: center;
+    background: #f2f2f2;
+    background: rgba(242, 242, 242, 1);
+    color: #21697c;
+    color: rgb(33, 105, 124);
 }
 
 .label-info, .joint-label, .joint-data{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-
-    background: #f2f2f2;
-    background: rgba(242, 242, 242, 1);
-
-    border-radius: 10%;
-
-    font-size: 125%;
-
-    color: #21697c;
-    color: rgb(33, 105, 124);
     margin: 1%;
     margin-top: 5%;
-}
-
-.labels{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.3rem;
-    height: 50%;
-
-    background: #f2f2f2;
-    background: rgba(242, 242, 242, 1);
-
+    font-size: 125%;
     border-radius: 10%;
-
-    font-size: 100%;
-
-    color: #21697c;
-    color: rgb(33, 105, 124);
 }
 
 .joint-label, .joint-data{
@@ -101,4 +85,8 @@ canvas{
     font-size: 100%;
     height: 80%;
     margin: 5%;
+}
+
+canvas{
+    border-radius: 2%
 }

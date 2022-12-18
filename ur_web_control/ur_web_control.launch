@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+    <node pkg="tf2_web_republisher" name="tf2_web_republisher" type="tf2_web_republisher" />
+    <node pkg="ur_web_control" name="switch" type="switch.py" output="screen"/>
+</launch>
