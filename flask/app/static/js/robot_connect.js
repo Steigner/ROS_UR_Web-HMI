@@ -98,7 +98,19 @@ $(function init() {
                     
                 }
                 
-                // If is connected -> wait on hit button Play in UR Polyscope
+                // on run UR ROS Driver hit Play button via. rosservice call!
+                else if(message.msg.includes('Robot mode is now RUNNING')){
+                    var play = new ROSLIB.Service({
+                        ros : ros,
+                        name : '/ur_hardware_interface/dashboard/play',
+                        serviceType : '/play'
+                    });
+                        play.callService(function() {
+                        console.log('Service was called.');
+                    });
+                }
+
+                // If is connected -> wait on hit button Play
                 else if(message.msg.includes('Robot connected to reverse interface.')){
                     alert('Robot is ready! Running Moveit! Redirect page after 5 seconds!', 'success')
             

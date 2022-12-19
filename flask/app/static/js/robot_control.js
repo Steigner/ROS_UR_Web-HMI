@@ -274,7 +274,7 @@ $(function init() {
             var elements = [];
             $('.joint').map(function() {
                 // this callback function will be called once for each matching element
-                elements.push(this.id); 
+                elements.push('#'+this.id); 
             });
 
             this.on_run_btnclick(elements);
