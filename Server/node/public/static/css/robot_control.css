@@ -1,0 +1,92 @@
+body{
+    height: 100%;
+    width: 100%;    
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #f2f2f2;
+    background-color: rgba(242, 242, 242, 1);
+}
+
+.container-mine{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.robot-info{
+    display: grid;
+    align-self: flex-start;
+    grid-template-columns: 15% 35% 15% 35%;
+    margin-top: 2%;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+#right{
+    display: grid;
+    grid-template-rows: 5% 55% 5% 25% 10%;
+    align-items: center;
+}
+
+.joint{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 15% 15% 40% 15% 15%;
+}
+
+.joint-control{
+    display: grid;
+    align-self: flex-start;
+    margin-top: 2%;
+}
+
+.labels{
+    height: 50%;
+    margin: 0.3rem;
+    font-size: 100%;
+    border-radius: 10%;
+}
+
+.label-info, .joint-label, .joint-data, .labels{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    background: rgba(242, 242, 242, 1);
+    color: #21697c;
+    color: rgb(33, 105, 124);
+}
+
+.label-info, .joint-label, .joint-data{
+    height: 100%;
+    margin: 1%;
+    margin-top: 5%;
+    font-size: 125%;
+    border-radius: 10%;
+}
+
+.joint-label, .joint-data{
+    display: flex;
+    justify-content: center;
+    font-size: 100%;
+    height: 80%;
+    margin: 5%;
+}
+
+canvas{
+    border-radius: 2%
+}

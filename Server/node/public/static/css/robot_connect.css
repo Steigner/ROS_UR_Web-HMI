@@ -1,0 +1,87 @@
+body::after{
+    height: 100%;
+    width: 100%;  
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #f2f2f2;
+    background-color: rgba(242, 242, 242, 1);
+    opacity: 0.25;
+    z-index: -1;
+}
+
+.container-mine{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#main.container-mine{
+    height: 100vh;
+    width: 100vw; 
+    grid-template-columns: 25% 50% 25%;
+}
+
+#carousel.container-mine{
+    grid-template-rows: 10% 90%;
+}
+
+.carousel-mine{
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    opacity: 0.5;
+}
+
+.ur{
+    width: 30%;
+}
+
+.but{
+    width: 100%;
+}
+
+#img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    border-radius: 10%;
+}
+
+.label, .title-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(242, 242, 242, 1);
+    color: #21697c;
+    color: rgb(33, 105, 124);
+}
+
+.label{
+    height: 7.5rem;
+    margin: 1rem;
+    font-size: 200%;
+    border-radius: 2rem;
+}
+
+.title-label{
+    width: 80%;
+    margin: 0.5rem;
+    font-size: 200%;
+    border-radius: 2rem;
+}
+
+.carousel-indicators{
+    margin-bottom: -1rem
+}
+
+.connect{
+    margin: 0;
+}

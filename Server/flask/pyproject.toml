@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "OpenHMI"
+name = "ur_web_control"
 version = "0.1.0"
 description = ""
 authors = ["Steigner"]

@@ -1,0 +1,44 @@
+.form-range{
+    width:100%;
+    height:2rem;
+    padding:5%;
+}
+
+.form-range::-webkit-slider-thumb{
+    background-color: rgb(33, 105, 124);
+}
+
+.btn{
+    background-color: rgb(33, 105, 124);
+    border: 0;
+    margin: 10%;
+}
+
+.btn:focus, .btn:active, .btn:active:hover{
+    outline:0;
+    box-shadow:0 0 0 0rem rgb(33, 105, 124);
+    background-color: rgb(33, 105, 124);
+}
+
+.btn:hover{
+    background-color: rgb(33, 105, 124);
+    opacity: 0.5;
+}
+
+#btn_home, #btn_run{
+    margin: 1%;
+}
+
+.btn:disabled{
+    opacity: 0.4;
+    background-color: red;
+}
+
+#label-adress{
+    margin-left: 10%;
+}
+
+#ip-adress, #ros-ip-adress{
+    width: 80%;
+    margin-left: 10%;
+}

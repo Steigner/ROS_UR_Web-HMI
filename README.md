@@ -10,10 +10,11 @@ Software
 |
 + Backend
 + ---------
-| ROS
-|   - version Noetic, Melodic (Tested)
-| FLASK
-|   - version 2.2.2
+| ROS version Noetic(Tested), Melodic(Tested)
+|
+| SERVER
+|   - FLASK  version 2.2.2
+|   - NODEJS version 18.12.1
 |
 + Frontend
 + ---------
@@ -32,18 +33,38 @@ The system is designed so that especially the basic control logic is implemented
 
 **If anyone is more conservative, he can override the system with more server-side logic. However, this choice comes at the price of less modularity.**
 
+### Hierarchy
+
+There were two alternative paths used in this project, using **python flask** or **javascript node** server. Depending on your preference you can choose which framework to use or simply modify for a completely different web framework. The main ROS logic is implied on the client's side. 
+
+How to use and install it, look in the README file in the Server and ROS folder.
+
+```
+Server
+└───flask
+└─────app.py
+└───node
+└─────app.js
+
+ROS
+└───ur_web_control
+└─────ur_web_control.launch
+```
+
 ![Structure](/docs/structure.png)
 
-### Note 
-Switch logic on client side in *robot_connect.js* relies on logs /rosout statements (URx bringup, Moveit).
-
-The solution was mainly based on rostopic due to simplicity than rosservices. Rosservices would mainly be used in real deployment.
-
-🔴 Server e.g. uWSGI, Gunicorn
+🔴 Server e.g. Node.js or uWSGI/Gunicorn + Flask
 
 🔵 URx collaborative robot
 
 🟢 ROS Server e.g. Nvidia Xavier, Raspberry Pi
+
+### Note 
+Switch logic on client side in *robot_connect.js* relies on logs /rosout statements (URx bringup, Moveit). Please if anyone can think of a better solution please let me know.
+
+The solution was mainly based on rostopic due to simplicity than rosservices. Rosservices would mainly be used in real deployment.
+
+Implementing the solution in node.js was due to a simple local server, where the original project designed in python flask was freezes the project to static files using the Frozen-Flask library. 
 
 ## :information_source: Contacts
 
