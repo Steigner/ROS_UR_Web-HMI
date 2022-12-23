@@ -13,8 +13,8 @@ Software
 | ROS version Noetic(Tested), Melodic(Tested)
 |
 | SERVER
-|   - FLASK  version 2.2.2
-|   - NODEJS version 18.12.1
+|   - FLASK  version 2.2.2 (Option1)
+|   - NODEJS version 18.12.1 (Option2)
 |
 + Frontend
 + ---------
