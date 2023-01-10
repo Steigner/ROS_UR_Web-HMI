@@ -59,6 +59,17 @@ ROS
 
 🟢 ROS Server e.g. Nvidia Xavier, Raspberry Pi
 
+### Video
+For testing in the I4C lab, we chose Nvidia Xavier as the controller, running the Robot Operating System (ROS). A desktop computer was used as a server.
+
+Click on button -> Youtube video: [Robot Operating System (ROS) Universal Robots Web Human-Machine Interface (HMI)](https://www.youtube.com/watch?v=IJtdp1wdPPo)
+
+Channel: [Roman Parak](https://www.youtube.com/@RomanParak)
+
+<p align="center">
+<a href="https://www.youtube.com/watch?v=IJtdp1wdPPo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="Robot Operating System (ROS) Universal Robots Web Human-Machine Interface (HMI)"/></a>
+</p>
+
 ### Note 
 Switch logic on client side in *robot_connect.js* relies on logs /rosout statements (URx bringup, Moveit). Please if anyone can think of a better solution please let me know.
 
