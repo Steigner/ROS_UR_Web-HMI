@@ -10,8 +10,8 @@ user@user-pc:~$ sudo apt-get install ros-<rosdistro>-rosbridge-server
 ```console
 user@user-pc:~$ sudo apt-get install ros-<rosdistro>-tf2-web-republisher
 ```
-3) To the catkin workspace, by default *catkin_ws* insert the package **ur_web_control**.
-4) You can then start the system by the command:
+5) To the catkin workspace, by default *catkin_ws* insert the package **ur_web_control**.
+6) You can then start the system by the command:
 
 ```console
 $ roslaunch ur_web_control ur_web_constrol.launch
