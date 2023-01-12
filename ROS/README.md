@@ -6,7 +6,7 @@
 ```console
 user@user-pc:~$ sudo apt-get install ros-<rosdistro>-rosbridge-server
 ```
-4) [TF2-Web-Republisher](http://wiki.ros.org/tf2_web_republisher)
+4) Install [TF2-Web-Republisher](http://wiki.ros.org/tf2_web_republisher)
 ```console
 user@user-pc:~$ sudo apt-get install ros-<rosdistro>-tf2-web-republisher
 ```
