@@ -76,7 +76,3 @@ Switch logic on client side in *robot_connect.js* relies on logs /rosout stateme
 The solution was mainly based on rostopic due to simplicity than rosservices. Rosservices would mainly be used in real deployment.
 
 Implementing the solution in node.js was due to a simple local server, where the original project designed in python flask was freezes the project to static files using the Frozen-Flask library. 
-
-## :information_source: Contacts
-
-:mailbox: m.juricek@outlook.com
